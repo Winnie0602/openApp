@@ -2,14 +2,6 @@
 const isMobile = ref()
 
 const openApp = () => {
-  navigator.getInstalledRelatedApps().then((relatedApps) => {
-    for (let app of relatedApps) {
-      console.log(app.platform)
-      console.log(app.url)
-      console.log(app.id)
-    }
-  })
-
   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
   isMobile.value = regex.test(navigator.userAgent)
 
@@ -21,13 +13,13 @@ const openApp = () => {
     }
 
     if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-      // alert('此裝置為ipone')
-      // 鏡好聽app store
+      alert('此裝置為ipone')
 
+      // 鏡好聽app store
       const isOpenApp = ref(false)
 
       const open1 = setTimeout(() => {
-        window.location.replace('fb1://')
+        window.location.replace('mirrorvoice://')
       }, 400)
 
       const open2 = setTimeout(() => {
